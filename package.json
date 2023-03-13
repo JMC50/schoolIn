@@ -1,0 +1,11 @@
+{
+  "name": "ansanin",
+  "version": "1.0.0",
+  "description": "Ansan-In",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd client&&npm run dev\" \"cd server&&npm run start:dev\""
+  },
+  "author": "JMC50",
+  "license": "ISC"
+}
