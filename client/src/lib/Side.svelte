@@ -1,10 +1,12 @@
 <script lang="ts">
-    import { useAuth } from "../store/auth";
+    import { useAuth, today_schedule } from "../store/auth";
+    import NextTime from "./nextTime.svelte";
 
     let hello_words = ["안녕하세요!", "반가워요!", "안녕하세요.", "반가워요.", "환영해요.", "환영해요!", "잘 지내시나요?", "잘 지내시나요!"];
     let hello_word = hello_words[Math.floor(Math.random() * hello_words.length)];
 
     let date:Date;
+
     let dayofWeek:string;
 
 
@@ -32,6 +34,9 @@
         <div class="btns">
             <div class="inline font btn text">설정</div><div class="inline font btn text">로그아웃</div>
         </div>
+    </div>
+    <div class="item">
+        <NextTime />
     </div>
     <div class="bottom">
         <div>2023 안산In / Beta 1.0</div>
@@ -72,8 +77,8 @@
     }
     .item{
         background-color: white;
-        padding: 20px;
-        width: 75%;
+        padding: 20px 20px 20px 30px;
+        width: 71%;
         border-radius: 50px;
         margin-top: 20px;
         box-shadow: 0px 0px 10px 0px #dbdbdb;

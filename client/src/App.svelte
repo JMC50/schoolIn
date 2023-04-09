@@ -13,9 +13,9 @@
   let hashes:string[] = [];
   const pages = ["#login"];
 
-  if($useAuth.id == ''){
-    hash = '#login';
-  }
+  // if($useAuth.id == ''){
+  //   hash = '#login';
+  // }
 
   $:{
       location.hash = hash;

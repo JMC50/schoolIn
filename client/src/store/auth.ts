@@ -118,5 +118,5 @@ const weather_Info:Iweather = {
 export const useAuth = writable(userDetail)
 export const weatherInfo = writable(weather_Info)
 export const scheduleInfo = writable();
-export const today_schedule = writable();
+export const today_schedule:any = writable();
 export const lunchInfo = writable();

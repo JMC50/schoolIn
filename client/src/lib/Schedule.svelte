@@ -21,7 +21,7 @@
         let year    = d.getFullYear();
         let month   = ('0' + (d.getMonth() +  1 )).slice(-2);
         let day     = ('0' + d.getDate()).slice(-2);
-        return year+month+day
+        return year+month+day;
     }
 
     const getSchedule = async () => {
@@ -109,7 +109,7 @@
         text-align: center;
         border: 2px solid $backgroundColor;
         border-collapse: collapse;
-        font-size: 1.3em;
+        font-size: 1em;
         font-family: 'KCC-Ganpan';
         padding: 4px 8px 4px 8px;
     }

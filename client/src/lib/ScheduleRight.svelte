@@ -16,23 +16,27 @@
         let year    = d.getFullYear();
         let month   = ('0' + (d.getMonth() +  1 )).slice(-2);
         let day     = ('0' + d.getDate()).slice(-2);
-        return year+month+day
+        return year+month+day;
     }
 
     const getSchedule = async () => {
         if($today_schedule){
             return $today_schedule;
         }else{
-            const lists:any[] = [];
-            const date = getday(0);
-            const res = await fetch(`${url}&ALL_TI_YMD=${date}`);
-            const data = await res.json();
-            for(let i of data.hisTimetable[1].row){
-                console.log(i);
-                lists.push(i.ITRT_CNTNT);
+            try{
+                const lists:any[] = [];
+                const date = getday(0);
+                const res = await fetch(`${url}&ALL_TI_YMD=${date}`);
+                const data = await res.json();
+                for(let i of data.hisTimetable[1].row){
+                    lists.push(i.ITRT_CNTNT);
+                }
+                today_schedule.set(lists);
+                return lists;
+            }catch(e){
+                today_schedule.set([]);
+                return [];
             }
-            today_schedule.set(lists);
-            return lists;
         }
     }
 
@@ -66,6 +70,9 @@
             <div class="schedule font text_middle">{schedules.indexOf(schedule) + 1}교시 {changeSubjectName(schedule)}</div>
         {/each}
     </div>
+    {#if schedules.length == 0}
+        <div class="font text_middle">오늘은 수업이 없어요!<br>이예에!</div>
+    {/if}
 {/await}
 
 <style lang="scss">

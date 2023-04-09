@@ -48,8 +48,6 @@
                 number
             })
 
-            console.log($useAuth);
-
             const res = await fetch(`/server/user/user/update/${data.email}`, {
                 method:"POST",
                 headers:{
@@ -63,6 +61,15 @@
         }else{
             return alert('위 항목들을 모두 작성해주세요!');
         }
+    }
+
+    const barcode_upload = () => {
+        const input = document.createElement("input");
+        input.type = "file";
+        input.addEventListener("change", e => {
+            console.log(input.files[0]);
+        })
+        input.click();
     }
 
     $: {
@@ -90,10 +97,10 @@
                 <div class="font inline text_big title">안산In</div>
             </div>
             <br>
-            <div class="title font text_middle">안녕하세요 <div class="name font text_middle inline">{name}</div>님! <br>안산In의 더 좋은 서비스 이용을 위해 회원가입을 진행해주세요.</div>
+            <div class="title font text_middle">안녕하세요 <div class="name font inline">{name}</div>님! <br>안산In의 더 좋은 서비스 이용을 위해 회원가입을 진행해주세요.</div>
             <div class="qna">
                 <div class="question">
-                    <div class="font text_middle">이름이 뭔가요? (<div class="name font text_middle inline">실명</div>을 입력해주세요!)</div>
+                    <div class="font text_middle">이름이 뭔가요? (<div class="name font inline">실명</div>을 입력해주세요!)</div>
                     <input type="text" placeholder="이름을 입력해주세요" bind:value={name} class="input">
                 </div>
                 <div class="question">
@@ -105,7 +112,10 @@
                     </select> 학년 <input type="number" class="number" bind:value={class_}> 반 <input type="number" class="number" bind:value={number}> 번
                 </div>
                 <div class="question">
-                    <div class="font text_middle">온라인 학생증 - 준비중</div>
+                    <div class="font text_middle">온라인 학생증</div>
+                    <div class="font text_small">준비중</div>
+                    <!-- <div class="font text_small">학생증 뒷면에 있는 바코드를 사진찍어주세요.</div>
+                    <div class="font text_small btn inline" on:click={barcode_upload}>바코드 사진 업로드</div> -->
                 </div>
             </div>
             <br>
@@ -158,7 +168,10 @@
         font-size: 50px;
     }
     .text_middle{
-        font-size: 25px;
+        font-size: 1.8em;
+    }
+    .text_small{
+        font-size: 1.4em;
     }
     #inner_con{
         width: 50vw;
@@ -180,6 +193,7 @@
     #main_con{
         display: flex;
         justify-content: center;
+        font-size: 1vw;
     }
     .name{
         color: blue;
