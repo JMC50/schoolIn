@@ -53,16 +53,16 @@
 
 > ## oauth
 >
-> GET /oauth/login => 구글 로그인 요청 => 구글 로그인 시스템으로 이동
-> GET /oauth/google/callback => 구글 로그인 시스템에서 서버로 콜백
-> GET /oauth/check => 계정이 db에 있는지 없는지 체크
+> * GET /oauth/login => 구글 로그인 요청 => 구글 로그인 시스템으로 이동
+> * GET /oauth/google/callback => 구글 로그인 시스템에서 서버로 콜백
+> * GET /oauth/check => 계정이 db에 있는지 없는지 체크
 >
 > ## User
 >
-> GET /user/user/getInfo/:id => 아이디로 유저의 정보를 받아옴
-> GET /user/user/getuserbyEmail/:email => 이메일로 유저의 정보를 받아옴
-> POST /user/user/update/:email => 이메일로 유저의 정보를 받아오고, 업데이트 함
+> * GET /user/user/getInfo/:id => 아이디로 유저의 정보를 받아옴
+> * GET /user/user/getuserbyEmail/:email => 이메일로 유저의 정보를 받아옴
+> * POST /user/user/update/:email => 이메일로 유저의 정보를 받아오고, 업데이트 함
 >
 > ## weather
 >
-> GET /weather/weather/getweather => 날씨 정보를 받아옴
+> * GET /weather/weather/getweather => 날씨 정보를 받아옴
