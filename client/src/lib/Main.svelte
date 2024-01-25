@@ -16,9 +16,13 @@
     }
 
     function getUserInfo(token:string){
-        return fetch(`/server/oauth/check`, {
+        return fetch(`http://112.170.225.201:3000/oauth/check`, {
             headers: {'Authorization': `Bearer ${token}`}
         }).then(res => res.json() )
+
+        // return fetch(`/server/oauth/check`, {
+        //     headers: {'Authorization': `Bearer ${token}`}
+        // }).then(res => res.json() )
     }
 
     const get_token = async () => {
