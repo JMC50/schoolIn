@@ -18,7 +18,7 @@ export default defineConfig({
       },
       "/server": {
         // target: "http://localhost:3000",
-        target: "http://112.170.225.201:3000",
+        target: "http://ansaninserver.kro.kr:3000",
         changeOrigin: true,
         secure: true,
         rewrite: (p) => p.replace(/^\/server/, ''),
