@@ -9,7 +9,7 @@ export default defineConfig({
     strictPort: true,
     proxy:{
       "/weather": {
-        target: "http://api.openweathermap.org/data/2.5/weather?q=ansan&appid=1eb1d18602c0e2dde562cdc2005a4495&units=metric",
+        target: "https://api.openweathermap.org/data/2.5/weather?q=ansan&appid=1eb1d18602c0e2dde562cdc2005a4495&units=metric",
         changeOrigin: true,
         secure: true,
         rewrite(p){
