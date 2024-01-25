@@ -1,12 +1,8 @@
 {
     "rewrites": [
       {
-        "source": "/server",
-        "destination": "http://ansaninserver.kro.kr:3000"
-      },
-      {
-        "source": "/(.*)",
-        "destination": "/"
+        "source": "/server/:path*",
+        "destination": "http://ansaninserver.kro.kr:3000/:path*"
       }
     ]
   }
