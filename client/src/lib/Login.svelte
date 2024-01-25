@@ -3,8 +3,9 @@
 
     const login = async () => {
         const a = document.createElement("a");
-        a.href = "http://localhost:3000/oauth/login";
+        // a.href = "http://localhost:3000/oauth/login";
         // a.href = "http://112.170.225.201:3000/oauth/login";
+        a.href = "http://ansaninserver.kro.kr:3000/oauth/login";
         a.click();
     }
 </script>
