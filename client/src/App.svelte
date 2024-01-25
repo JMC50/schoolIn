@@ -6,7 +6,7 @@
   import { useAuth } from "./store/auth";
 
 
-  let hash = location.hash
+  let hash = location.hash;
   if(!hash) {
       hash = '#login'
   }

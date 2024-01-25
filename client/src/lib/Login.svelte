@@ -15,7 +15,7 @@
         <div class="font title">안산In</div>
     </div>
     <div id="btn_con">
-        <div id="login" on:click={login}>구글 로그인</div>
+        <div id="login" on:click={login}>로그인</div>
     </div>
 </main>
 
