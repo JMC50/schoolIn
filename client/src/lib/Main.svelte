@@ -29,6 +29,7 @@
         if(location.hash.indexOf('?token') !== -1){
             const token = location.hash.slice(location.hash.indexOf('?token')).split('=')[1]
             const {data} = await getUserInfo(token);
+            console.log("asdasdasd");
 
             const res = await fetch(`/server/user/user/getuserbyEmail/${data.email}`);
             const userInfo = await res.json();
